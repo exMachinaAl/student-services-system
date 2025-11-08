@@ -1,0 +1,44 @@
+
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Riwayat Pengaduan & Favorit</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-brand">UNIVERSITAS</div>
+      <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="pengaduan.html">Pengaduan</a>
+        <a href="beasiswa.html">Beasiswa & Karir</a>
+        <a href="riwayat.html" class="active">Riwayat</a>
+        <a href="admin_dashboard.html">Admin</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="main-header"><h1>Riwayat Pengaduan</h1></header>
+      <div class="card">
+        <table class="table">
+          <thead>
+            <tr><th>Judul Pengaduan</th><th>Tanggal Pengajuan</th><th>Status</th><th>Aksi</th></tr>
+          </thead>
+          <tbody id="riwayat-table">
+            <!-- JS fill -->
+          </tbody>
+        </table>
+      </div>
+
+      <header class="main-header" style="margin-top:24px;"><h1>Beasiswa & Karir Favorit</h1></header>
+      <div class="cards-grid" id="favorites-grid">
+        <!-- favorite cards -->
+      </div>
+    </main>
+  </div>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

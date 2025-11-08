@@ -1,0 +1,214 @@
+GET http://localhost:3000/api/chat/history?sender_id=1&receiver_id=2
+
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hdXRoIjoxLCJ1c2VybmFtZSI6IkpvcmRhbiBhbGV4YW5kZXIgZG9scGhpbiIsImlkX2FjY291bnQiOiIyMzA2MDIwMTAiLCJpYXQiOjE3NjE5Nzc0NDYsImV4cCI6MTc2MjA2Mzg0Nn0.L3TDBeNhXa45sqRa1f7x2jkMf3_n4oXGdoPXGOG62X8
+### mencoba refresh token
+POST http://localhost:3000/api/sign/refreshtoken/mahasiswa
+
+### pakek akses token
+GET http://localhost:3000/api/sign/authentication
+Authorization: Bearer {{accessToken}}
+###
+POST http://localhost:3000/api/sign/register/mahasiswa
+Content-Type: application/json
+
+{
+    "nama": "baihaqi el qowalsqi",
+    "nim": "230602009",
+    "programStudi": "Teknik Informatika",
+    "phoneNumber": "081234567890",
+    # "phoneNumber": "085672381928",
+    "email": "ronggi@mail.id",
+    # "email": "sanqiu119@mail.eh",
+    "password": "manok"
+}
+### Login User
+POST http://localhost:3000/api/sign/login/mahasiswa
+Content-Type: application/json
+
+{
+    # "username": "gamet@qiuqiu.sh",
+    "username": "230602010",
+    "password": "1234"
+
+    # "username": "230602009",
+    # "password": "manok"
+}
+
+###
+POST https://localhost:3000/api/mahasiswa/pengaduan
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+    "isAnonim": true,
+    "judul": "Pengaduan sumber daya IT",
+
+    "deskripsi": "jadi gini gan, Η Γεννήτρια Τυχαίων Λέξεων είναι ένα εργαλείο που σας βοηθά να δημιουργήσετε μια λίστα με τυχαίες λέξεις. Υπάρχουν πολλοί λόγοι για τους οποίους κάποιος μπορεί να ενδιαφέρεται να το κάνει αυτό..",
+    "kategori": "akademik"
+}
+
+###
+GET http://localhost:3000/api/mahasiswa/dashboard
+Authorization: Bearer {{accessToken}}
+
+
+### detail info  beasiswa
+GET https://localhost:3000/api/mahasiswa/beasiswa-detail?id_beasiswa=2
+Authorization: Bearer {{accessToken}}
+
+### detail info karir
+GET https://localhost:3000/api/mahasiswa/karir-detail?id_karir=1
+Authorization: Bearer {{accessToken}}
+
+### daftar beasiswa
+POST https://localhost:3000/api/mahasiswa/beasiswa-daftar
+Authorization: Bearer {{accessToken}}
+Content-Type: multipart/form-data; boundary=MyBoundary
+
+--MyBoundary
+Content-Disposition: form-data; name="idBeasiswa"
+
+3
+--MyBoundary
+Content-Disposition: form-data; name="nama"
+
+jordhan alexander
+--MyBoundary
+Content-Disposition: form-data; name="nim"
+
+230602010
+--MyBoundary
+Content-Disposition: form-data; name="category"
+
+beasiswa
+--MyBoundary
+Content-Disposition: form-data; name="fileHead"
+
+beaasiswa-data-230602010
+--MyBoundary
+Content-Disposition: form-data; name="ktm"; filename="data1.png"
+Content-Type: image/png
+
+< ./test/data1.png
+--MyBoundary
+Content-Disposition: form-data; name="transkrip_nilai"; filename="data2.png"
+Content-Type: image/png
+
+< ./test/data2.png
+--MyBoundary
+Content-Disposition: form-data; name="krs"; filename="data3.png"
+Content-Type: image/png
+
+< ./test/data3.png
+--MyBoundary
+Content-Disposition: form-data; name="surat_rekomendasi"; filename="data4.png"
+Content-Type: image/png
+# Content-Type: application/zip
+
+< ./test/data4.png
+--MyBoundary--
+
+
+### daftar karir
+POST https://localhost:3000/api/mahasiswa/karir-daftar
+Authorization: Bearer {{accessToken}}
+Content-Type: multipart/form-data; boundary=MyBoundary
+
+--MyBoundary
+Content-Disposition: form-data; name="idKarir"
+
+1
+--MyBoundary
+Content-Disposition: form-data; name="nama"
+
+jordhan alexander
+--MyBoundary
+Content-Disposition: form-data; name="nim"
+
+230602010
+--MyBoundary
+Content-Disposition: form-data; name="category"
+
+karir
+--MyBoundary
+Content-Disposition: form-data; name="fileHead"
+
+karir-data-230602010s
+--MyBoundary
+Content-Disposition: form-data; name="CVResume"; filename="data1.png"
+Content-Type: image/png
+
+< ./test/data1.png
+--MyBoundary
+Content-Disposition: form-data; name="suratLamar"; filename="data2.png"
+Content-Type: image/png
+
+< ./test/data2.png
+--MyBoundary
+Content-Disposition: form-data; name="portofolio"; filename="data3.png"
+Content-Type: image/png
+
+< ./test/data3.png
+--MyBoundary
+Content-Disposition: form-data; name="sertifPendukung"; filename="data4.png"
+Content-Type: image/png
+# Content-Type: application/zip
+
+< ./test/data4.png
+--MyBoundary--
+
+### test fetch file dan gambar
+GET https://localhost:3000/uploads/beasiswa/beasiswa-eeeee.jpg
+Authorization: Bearer {{accessToken}}
+
+
+
+### mencoba logout
+POST http://localhost:3000/api/sign/logout
+
+
+
+
+
+
+
+
+
+
+
+
+@accessTokenV2 = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hdXRoIjo1LCJ1c2VybmFtZSI6IndhayBjbmlsIGFqYXciLCJpZF9hY2NvdW50IjoyLCJpYXQiOjE3NjE5MTc5ODQsImV4cCI6MTc2MTkyMTU4NH0.KRxmgvmVhezpXD5sXgEEVmVjDJ-Jxk-OjBA_71F_q3o
+
+### mencoba refresh token
+POST https://localhost:3000/api/sign/refreshtoken/admin
+
+### pakek akses token
+GET https://localhost:3000/api/sign/authentication
+Authorization: Bearer {{accessTokenV2}}
+###
+POST https://localhost:3000/api/sign/register/admin
+Content-Type: application/json
+
+{
+    "nama": "wak cnil ajaw",
+    "phoneNumber": "081234567891",
+    # "phoneNumber": "085672381928",
+    "email": "wakwie1@mail.id",
+    # "email": "sanqiu119@mail.eh",
+    "password": "1234"
+}
+### Login User
+POST https://localhost:3000/api/sign/login/admin
+Content-Type: application/json
+
+{
+    # "username": "wakwie1@mail.id",
+    "username": "081234567891",
+    "password": "1234"
+    # "password": "manok"
+}
+
+
+###
+GET https://localhost:3000/api/admin/dashboard
+Authorization: Bearer {{accessTokenV2}}

@@ -1,0 +1,47 @@
+
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Beasiswa & Karir</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-brand">UNIVERSITAS</div>
+      <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="pengaduan.html">Pengaduan</a>
+        <a href="beasiswa.html" class="active">Beasiswa & Karir</a>
+        <a href="riwayat.html">Riwayat</a>
+        <a href="admin_dashboard.html">Admin</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="main-header">
+        <h1>Beasiswa & Karir</h1>
+        <div class="tabs">
+          <button class="tab active" data-type="scholarship">Beasiswa (12)</button>
+          <button class="tab" data-type="career">Karir & Magang (25)</button>
+        </div>
+        <div class="filters">
+          <input id="search" placeholder="Search" />
+          <select id="filter-jurusan">
+            <option value="">Semua Jurusan</option>
+            <option>Teknik Informatika</option>
+            <option>Sistem Komputer</option>
+          </select>
+        </div>
+      </header>
+
+      <section class="cards-grid" id="posting-grid">
+        <!-- cards injected by JS -->
+      </section>
+    </main>
+  </div>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard Kaprodi</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-brand">UNIVERSITAS</div>
+      <nav>
+        <a href="kaprodi_dashboard.html" class="active">Dashboard</a>
+        <a href="admin_dashboard.html">Admin</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="main-header"><h1>Dashboard Kaprodi</h1></header>
+      <section class="grid-2">
+        <div class="card">
+          <h3>Sebaran Kategori Pengaduan</h3>
+          <div class="chart-placeholder">[Bar Chart]</div>
+        </div>
+        <div class="card">
+          <h3>Status Pengaduan</h3>
+          <div class="chart-placeholder">[Donut Chart]</div>
+        </div>
+      </section>
+
+      <section class="card" style="margin-top:16px;">
+        <h3>Jumlah Lowongan Karir/Beasiswa per Semester/Tahun</h3>
+        <div class="chart-placeholder">[Chart]</div>
+        <button class="btn btn-primary" id="btn-export">Ekspor Data</button>
+      </section>
+    </main>
+  </div>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

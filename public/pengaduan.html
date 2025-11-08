@@ -1,0 +1,49 @@
+
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ajukan Pengaduan</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-brand">UNIVERSITAS</div>
+      <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="pengaduan.html" class="active">Pengaduan</a>
+        <a href="beasiswa.html">Beasiswa & Karir</a>
+        <a href="riwayat.html">Riwayat</a>
+        <a href="admin_dashboard.html">Admin</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="main-header"><h1>Formulir Pengajuan Pengaduan Baru</h1></header>
+      <div class="card form-card">
+        <label>Judul</label>
+        <input id="p-judul" type="text" placeholder="Judul singkat" />
+        <label>Kategori</label>
+        <select id="p-kategori">
+          <option>Akademik</option>
+          <option>Fasilitas</option>
+          <option>Dosen/Staf</option>
+          <option>Keuangan</option>
+          <option>Lainnya</option>
+        </select>
+        <label>Deskripsi</label>
+        <textarea id="p-deskripsi" placeholder="Jelaskan pengaduan secara lengkap"></textarea>
+        <label>Unggah Bukti (opsional)</label>
+        <input id="p-file" type="file" />
+        <div class="row-between">
+          <button class="btn btn-ghost" id="btn-cancel">Batal</button>
+          <button class="btn btn-primary" id="btn-submit">Kirim Pengaduan</button>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

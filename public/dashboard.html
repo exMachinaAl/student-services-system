@@ -1,0 +1,64 @@
+
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard Mahasiswa</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-brand">UNIVERSITAS</div>
+      <nav>
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="pengaduan.html">Pengaduan</a>
+        <a href="beasiswa.html">Beasiswa & Karir</a>
+        <a href="riwayat.html">Riwayat</a>
+        <a href="admin_dashboard.html">Admin</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <header class="main-header">
+        <h1>Selamat Datang, Budi</h1>
+        <div class="notif">🔔</div>
+      </header>
+
+      <section class="grid-2">
+        <div class="card">
+          <h3>Status Akademik</h3>
+          <div class="big-number">IPK 3.69 <span class="muted">Semester 6</span></div>
+        </div>
+
+        <div class="card">
+          <h3>Pengaduan Terakhir</h3>
+          <ul class="list-compact" id="recent-complaints">
+            <!-- JS will fill -->
+          </ul>
+          <a href="pengaduan.html" class="btn btn-primary full">Ajukan Pengaduan Baru</a>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>Info Terbaru</h3>
+        <div class="cards-grid">
+          <div class="info-card">
+            <strong>Beasiswa A</strong>
+            <div class="muted">Deadline: 15 Mei 2025</div>
+          </div>
+          <div class="info-card">
+            <strong>Lowongan PT. ABC</strong>
+            <div class="muted">Deadline: 30 Apr 2025</div>
+          </div>
+          <div class="info-card">
+            <strong>Beasiswa B</strong>
+            <div class="muted">Deadline: 01 Jun 2025</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

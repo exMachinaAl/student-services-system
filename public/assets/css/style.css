@@ -1,0 +1,72 @@
+
+/* Simple modern style for kampus UI */
+:root{
+  --bg:#f5f7fa;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --primary:#0b5ed7;
+  --accent:#f6c23e;
+  --sidebar:#0f2b45;
+}
+*{box-sizing:border-box;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Helvetica,Arial,sans-serif}
+body{margin:0;background:var(--bg);color:#111;}
+.page-center{display:flex;min-height:100vh;align-items:center;justify-content:center;padding:24px}
+.card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 6px 18px rgba(13,25,38,0.08)}
+.auth-card{width:100%;max-width:1100px;display:flex;overflow:hidden}
+.split{flex:1;padding:28px}
+.left-visual{background:linear-gradient(180deg,#fff,#f7fafc);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:12px;border-right:1px solid #eef2f6}
+.brand{display:flex;flex-direction:column;align-items:center;margin-bottom:6px}
+.logo{width:64px;height:64px;background:var(--sidebar);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:700}
+.univ-name{margin:0;font-size:20px;letter-spacing:1px;color:var(--sidebar)}
+
+.hero-img{width:80%;height:260px;background:linear-gradient(180deg,#e6f0ff,#fff);border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.02)}
+
+/* form area */
+.form-area{background:transparent}
+.form label{display:block;margin-top:12px;color:var(--muted);font-size:13px}
+.form input,.form textarea,.form select{width:100%;padding:10px 12px;margin-top:6px;border:1px solid #e6eef6;border-radius:8px;outline:none}
+.form textarea{min-height:100px;resize:vertical}
+.btn{padding:10px 14px;border-radius:8px;border:0;cursor:pointer;font-weight:600}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-ghost{background:#eef2f6;color:var(--sidebar);border:1px solid #e4eefc}
+.divider{text-align:center;margin:10px 0;color:var(--muted)}
+
+/* layout */
+.layout{display:flex;min-height:100vh}
+.sidebar{width:220px;background:var(--sidebar);color:#fff;padding:24px;border-radius:0 12px 12px 0}
+.sidebar-brand{font-weight:700;margin-bottom:18px}
+.sidebar nav a{display:block;color:#dbe9ff;padding:10px 8px;border-radius:8px;margin-bottom:6px;text-decoration:none}
+.sidebar nav a.active{background:rgba(255,255,255,0.06)}
+
+.main-content{flex:1;padding:28px}
+.main-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card .big-number{font-size:20px;font-weight:700;margin-top:10px}
+.list-compact{list-style:none;padding:0;margin:8px 0}
+.list-compact li{padding:8px 0;border-bottom:1px dashed #eef2f6}
+
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.info-card{padding:12px;border-radius:10px;background:#fff;border:1px solid #eef6ff}
+
+.form-card input, .form-card textarea, .form-card select{margin-bottom:8px}
+.row-between{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+
+/* table */
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:12px;border-bottom:1px solid #eef2f6;text-align:left}
+.table thead th{background:#fbfdff}
+
+/* small helpers */
+.muted{color:var(--muted);font-size:13px}
+.full{display:block;width:100%}
+.tab{background:transparent;border:1px solid #eef2f6;padding:8px 12px;border-radius:8px}
+.tab.active{border-bottom:3px solid var(--accent)}
+.chart-placeholder{height:140px;display:flex;align-items:center;justify-content:center;color:var(--muted);background:#fbfdff;border-radius:8px}
+
+/* responsive */
+@media (max-width:900px){
+  .grid-2{grid-template-columns:1fr}
+  .sidebar{display:none}
+  .auth-card{flex-direction:column}
+  .left-visual{order:2}
+}
