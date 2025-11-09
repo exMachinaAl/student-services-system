@@ -1,14 +1,14 @@
-GET http://localhost:3000/api/chat/history?sender_id=1&receiver_id=2
+GET https://localhost:3000/api/chat/history?sender_id=1&receiver_id=2
 
 @accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hdXRoIjoxLCJ1c2VybmFtZSI6IkpvcmRhbiBhbGV4YW5kZXIgZG9scGhpbiIsImlkX2FjY291bnQiOiIyMzA2MDIwMTAiLCJpYXQiOjE3NjE5Nzc0NDYsImV4cCI6MTc2MjA2Mzg0Nn0.L3TDBeNhXa45sqRa1f7x2jkMf3_n4oXGdoPXGOG62X8
 ### mencoba refresh token
-POST http://localhost:3000/api/sign/refreshtoken/mahasiswa
+POST https://localhost:3000/api/sign/refreshtoken/mahasiswa
 
 ### pakek akses token
-GET http://localhost:3000/api/sign/authentication
+GET https://localhost:3000/api/sign/authentication
 Authorization: Bearer {{accessToken}}
 ###
-POST http://localhost:3000/api/sign/register/mahasiswa
+POST https://localhost:3000/api/sign/register/mahasiswa
 Content-Type: application/json
 
 {
@@ -22,7 +22,7 @@ Content-Type: application/json
     "password": "manok"
 }
 ### Login User
-POST http://localhost:3000/api/sign/login/mahasiswa
+POST https://localhost:3000/api/sign/login/mahasiswa
 Content-Type: application/json
 
 {

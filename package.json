@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node thread.js",
-    "dev1": "nodemon src/server.js"
+    "dev1": "nodemon src/server.js",
+    "devp1": "nodemon src/proxy.js"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,7 @@
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "express-session": "^1.18.1",
+    "http-proxy-middleware": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
     "mediasoup": "^3.16.0",
     "mediasoup-client": "^3.9.5",

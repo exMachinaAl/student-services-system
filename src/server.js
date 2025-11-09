@@ -45,15 +45,15 @@ const IPS = "192.168.56.1";
 const URL_PRIVATE = "https://127.0.0.1:3000"; //
 
 //memulai untuk setel databse
-const server = http.createServer(app);
+// const server = http.createServer(app);
 
-// const server = https.createServer(
-//   {
-//     key: fs.readFileSync("./certs/key.pem"),
-//     cert: fs.readFileSync("./certs/cert.pem"),
-//   },
-//   app
-// );
+const server = https.createServer(
+  {
+    key: fs.readFileSync("./certs/key.pem"),
+    cert: fs.readFileSync("./certs/cert.pem"),
+  },
+  app
+);
 const io = new Server(server, {
   cors: {
     origin: "*",
