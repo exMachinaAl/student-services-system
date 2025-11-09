@@ -14,7 +14,12 @@ const fs = require("fs");
 const cors = require("cors");
 const multer = require("multer");
 const cookieParser = require("cookie-parser");
+const swaggerUI = require("swagger-ui-express");
+const swaggerJsDoc = require("swagger-jsdoc");
 
+
+// require('./utility/swagger').runSwaggerGen();
+const swaggerFile = require('./utility/swagger-output.json');
 const app = express();
 const { upload } = require("./utility/multer");
 
@@ -47,6 +52,7 @@ const URL_PRIVATE = "https://127.0.0.1:3000"; //
 //memulai untuk setel databse
 // const server = http.createServer(app);
 
+
 const server = https.createServer(
   {
     key: fs.readFileSync("./certs/key.pem"),
@@ -60,11 +66,24 @@ const io = new Server(server, {
     // methods: ["GET", "POST"],
   },
 });
+const specs = swaggerJsDoc({
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "Project API",
+      version: "1.0.0",
+    },
+  },
+  apis: ["./src/router/*.js"],
+});
+
 
 app.use(express.json());
 app.use(cors());
 app.use(express.static("public"));
 app.use(cookieParser());
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerFile));
+// app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs));
 
 const rooms = new Map();
 let worker;

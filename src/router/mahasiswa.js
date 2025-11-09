@@ -118,6 +118,22 @@ router.post("/pengaduan", async (req, res) => {
   res.json({ message: "Pengaduan berhasil dikirim." });
 });
 
+/**
+ * @swagger
+ * /mahasiswa/beasiswa-detail:
+ *   post:
+ *     consumes:
+ *       - application/json
+ *     summary: Upload berkas mahasiswa
+ *     parameters:
+ *       - in: formData
+ *         name: file
+ *         type: file
+ *         required: true
+ *     responses:
+ *       200:
+ *         description: File uploaded successfully
+ */
 router.get("/beasiswa-detail", async (req, res) => {
   const { id_beasiswa } = req.query;
 

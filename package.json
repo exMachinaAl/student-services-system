@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node thread.js",
+    "predev1": "node src/utility/swagger.js",
     "dev1": "nodemon src/server.js",
     "devp1": "nodemon src/proxy.js"
   },
@@ -27,7 +28,10 @@
     "mediasoup-client": "^3.9.5",
     "multer": "^2.0.2",
     "mysql2": "^3.14.0",
-    "socket.io": "^4.8.1"
+    "socket.io": "^4.8.1",
+    "swagger-autogen": "^2.23.7",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "type": "commonjs"
 }
