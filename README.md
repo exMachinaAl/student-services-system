@@ -144,8 +144,8 @@
 
 ### 1. Clone repository
 ```bash
-git clone https://github.com/<username>/<repo>.git
-cd <repo>
+git clone https://github.com/exMachinaAl/student-services-system.git
+cd student-services-system
 ```
 ### 2. install module
 ```bash
@@ -154,7 +154,7 @@ npm install
 ### 3. use dev runner for develope, or use thread mode for full run (not work)
 ```bash
 // normal case because is still develope
-npm run dev
+npm run dev1
 
 // nah, not work, or you can fix it
 npm start
