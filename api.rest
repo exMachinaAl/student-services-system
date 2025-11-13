@@ -1,6 +1,6 @@
 GET https://localhost:3000/api/chat/history?sender_id=1&receiver_id=2
 
-@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hdXRoIjoxLCJ1c2VybmFtZSI6IkpvcmRhbiBhbGV4YW5kZXIgZG9scGhpbiIsImlkX2FjY291bnQiOiIyMzA2MDIwMTAiLCJpYXQiOjE3NjE5Nzc0NDYsImV4cCI6MTc2MjA2Mzg0Nn0.L3TDBeNhXa45sqRa1f7x2jkMf3_n4oXGdoPXGOG62X8
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hdXRoIjoxLCJ1c2VybmFtZSI6IkpvcmRhbiBhbGV4YW5kZXIgZG9scGhpbiIsImlkX2FjY291bnQiOiIyMzA2MDIwMTAiLCJpYXQiOjE3NjMwNTczMzIsImV4cCI6MTc2MzE0MzczMn0.5OnZUm5zknvs_0s8EU-T3xB07t4aUzb4ymeb-eZwr4U
 ### mencoba refresh token
 POST https://localhost:3000/api/sign/refreshtoken/mahasiswa
 
@@ -58,6 +58,10 @@ Authorization: Bearer {{accessToken}}
 
 ### detail info karir
 GET https://localhost:3000/api/mahasiswa/karir-detail?id_karir=1
+Authorization: Bearer {{accessToken}}
+
+### detail rimwayat pengadu by query
+GET https://localhost:3000/api/mahasiswa/riwayat-pengaduan?maxRows=3&category=all
 Authorization: Bearer {{accessToken}}
 
 ### daftar beasiswa

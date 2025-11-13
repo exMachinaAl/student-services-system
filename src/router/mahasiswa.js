@@ -383,6 +383,33 @@ router.post(
   }
 );
 
+router.get("riwayat-pengaduan", async (req, res) => {
+  const nim = req.user.id_account;
+  let limitData = 5;
+  let categoryData = "all";
+
+  const destructData = req.query;
+
+  if( destructData.maxRows !== undefined && destructData.maxRows !== "") limitData = parseInt(destructData.maxRows);
+  if( destructData.category !== undefined && destructData.category !== "") categoryData = destructData.category;
+
+  let rows;
+  if (categoryData === "all") {
+    [rows] = await db.query(
+      "SELECT * FROM pengaduan WHERE id_mahasiswa = ? ORDER BY tanggal_pengajuan DESC LIMIT ?",
+      [nim, limitData]
+    );
+  } else {
+    [rows] = await db.query(
+      "SELECT * FROM pengaduan WHERE id_mahasiswa = ? AND Kategori = ? ORDER BY tanggal_pengajuan DESC LIMIT ?",
+      [nim, categoryData, limitData]
+    );
+  }
+
+  console.log("data res didapat")
+  console.log(rows)
+});
+
 /* 
   Utility for authentication mahasiswa
 */
