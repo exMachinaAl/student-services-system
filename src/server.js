@@ -512,5 +512,5 @@ app.use((err, req, res, next) => {
 
 
 server.listen(PORT, HOST, () => {
-  console.log(`Server running at http://${HOST}:${PORT}`);
+  console.log(`Server running at https://${HOST}:${PORT}`);
 });

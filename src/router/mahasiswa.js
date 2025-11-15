@@ -383,7 +383,7 @@ router.post(
   }
 );
 
-router.get("riwayat-pengaduan", async (req, res) => {
+router.get("/riwayat-pengaduan", async (req, res) => {
   const nim = req.user.id_account;
   let limitData = 5;
   let categoryData = "all";
@@ -406,8 +406,37 @@ router.get("riwayat-pengaduan", async (req, res) => {
     );
   }
 
-  console.log("data res didapat")
-  console.log(rows)
+  // console.log("data res didapat")
+  // console.log(rows)
+  res.status(200).json({ riwayat: rows });
+});
+
+router.get("/riwayat-aktivitas", async (req, res) => {
+  const nim = req.user.id_account;
+  let limitData = 10;
+  let categoryData = "all"; // beasiswa | karir | pengaduan
+
+  const destructData = req.query;
+
+  if( destructData.maxRows !== undefined && destructData.maxRows !== "") limitData = parseInt(destructData.maxRows);
+  if( destructData.category !== undefined && destructData.category !== "") categoryData = destructData.category;
+
+  let rows;
+  if (categoryData === "all") {
+    [rows] = await db.query(
+      "SELECT * FROM riwayat_mahasiswa WHERE id_mahasiswa = ? ORDER BY waktu_aktivitas DESC LIMIT ?",
+      [nim, limitData]
+    );
+  } else {
+    [rows] = await db.query(
+      "SELECT * FROM riwayat_mahasiswa WHERE id_mahasiswa = ? AND kategori_aktivitas = ? ORDER BY waktu_aktivitas DESC LIMIT ?",
+      [nim, categoryData, limitData]
+    );
+  }
+
+  // console.log("data res didapat")
+  // console.log(rows)
+  res.status(200).json({ riwayatKehidupan: rows });
 });
 
 /* 

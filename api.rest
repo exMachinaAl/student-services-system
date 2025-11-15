@@ -61,7 +61,11 @@ GET https://localhost:3000/api/mahasiswa/karir-detail?id_karir=1
 Authorization: Bearer {{accessToken}}
 
 ### detail rimwayat pengadu by query
-GET https://localhost:3000/api/mahasiswa/riwayat-pengaduan?maxRows=3&category=all
+GET https://localhost:3000/api/mahasiswa/riwayat-pengaduan?maxRows=100&category=
+Authorization: Bearer {{accessToken}}
+
+### ριςαυατ ακτιωιτασ βυ κατεγορτι ορ αλλ
+GET https://localhost:3000/api/mahasiswa/riwayat-aktivitas?maxRows=100&category=
 Authorization: Bearer {{accessToken}}
 
 ### daftar beasiswa
